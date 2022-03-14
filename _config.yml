@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 个人博客
+title: 野良的博客
 subtitle: '博客'
 description: '博客'
 keywords: 博客
@@ -106,6 +106,7 @@ deploy:
   repo: https://github.com/zjyyyuan/zjyyyuan.github.io.git
   branch: master
 
+# yilia主题
 jsonContent:
     meta: false
     pages: false
@@ -124,3 +125,4 @@ jsonContent:
       excerpt: false
       categories: false
       tags: true
+
