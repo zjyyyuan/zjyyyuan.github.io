@@ -175,7 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="TCP的三次握手"><a href="#TCP的三次握手" class="headerlink" title="TCP的三次握手"></a>TCP的三次握手</h1><p><img src="/blog/source/img/woshou.png" alt="TCP三次握手"><br>假设 A 为客户端，B 为服务器端。</p>
+        <h1 id="TCP的三次握手"><a href="#TCP的三次握手" class="headerlink" title="TCP的三次握手"></a>TCP的三次握手</h1><p><img src="/img/woshou.png" alt="TCP三次握手"><br>假设 A 为客户端，B 为服务器端。</p>
 <p>首先 B 处于 LISTEN（监听）状态，等待客户的连接请求。</p>
 <p>A 向 B 发送连接请求报文，SYN&#x3D;1，ACK&#x3D;0，选择一个初始的序号 x。</p>
 <p>B 收到连接请求报文，如果同意建立连接，则向 A 发送连接确认报文，SYN&#x3D;1，ACK&#x3D;1，确认号为 x+1，同时也选择一个初始的序号 y。</p>
@@ -183,7 +183,7 @@
 <p>B 收到 A 的确认后，连接建立。</p>
 <h3 id="三次握手的原因"><a href="#三次握手的原因" class="headerlink" title="三次握手的原因"></a>三次握手的原因</h3><p>第三次握手是为了防止失效的连接请求到达服务器，让服务器错误打开连接。</p>
 <p>客户端发送的连接请求如果在网络中滞留，那么就会隔很长一段时间才能收到服务器端发回的连接确认。客户端等待一个超时重传时间之后，就会重新请求连接。但是这个滞留的连接请求最后还是会到达服务器，如果不进行三次握手，那么服务器就会打开两个连接。如果有第三次握手，客户端会忽略服务器之后发送的对滞留连接请求的连接确认，不进行第三次握手，因此就不会再次打开连接。</p>
-<h1 id="TCP的四次挥手"><a href="#TCP的四次挥手" class="headerlink" title="TCP的四次挥手"></a>TCP的四次挥手</h1><p>以下描述不讨论序号和确认号，因为序号和确认号的规则比较简单。并且不讨论 ACK，因为 ACK 在连接建立之后都为 1。</p>
+<h1 id="TCP的四次挥手"><a href="#TCP的四次挥手" class="headerlink" title="TCP的四次挥手"></a>TCP的四次挥手</h1><p><img src="/blog/source/img/huishou.jpg" alt="TCP四次挥手"><br>以下描述不讨论序号和确认号，因为序号和确认号的规则比较简单。并且不讨论 ACK，因为 ACK 在连接建立之后都为 1。</p>
 <p>A 发送连接释放报文，FIN&#x3D;1。</p>
 <p>B 收到之后发出确认，此时 TCP 属于半关闭状态，B 能向 A 发送数据但是 A 不能向 B 发送数据。</p>
 <p>当 B 不再需要连接时，发送连接释放报文，FIN&#x3D;1。</p>
